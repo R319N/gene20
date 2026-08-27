@@ -33,13 +33,13 @@ const HeroContent = () => {
                     textTransform: "uppercase"
                 }}
             >
-                Digital Excellence Redefined
+                Creating Experiences Beyond The Ordinary
             </Typography>
 
             <Typography
                 variant="body1"
                 sx={{
-                    fontSize: { xs: "14px", xl: "20px" },
+                    fontSize: { xs: "14px", xl: "18px" },
                     color: 'rgba(238, 243, 255, 0.78)',
                     textTransform: "capitalize",
                     maxWidth: "45ch"
@@ -47,21 +47,36 @@ const HeroContent = () => {
                 }}
             >
                 We blend <strong>creativity</strong>, <strong>strategy</strong> and <strong>technology</strong> to build next generation digital products that drive growth
-                and deliver <strong style={{ color: "#0044ff" }}> real strategic impact.</strong>
+                and deliver <strong style={{ color: "#4a74e9" }}> real strategic impact.</strong>
             </Typography>
-            <Stack gap="4" sx={{ spacing: "4" }}>
+            <Stack spacing={2} sx={{width:"fit-content"}}>
                 <Button
-                    sx={{ width: "fit-content" }}
-                    variant="contained"
+                    sx={{ width: "100%" }}
+                    variant="outlined"
                     color="secondary"
-                    startIcon={
+                    endIcon={
                         <ArrowForwardRounded
                             sx={{ width: "22px", height: "22px" }}
                         />}
                 >
 
-                    Let&apos;s Discuss Your Project
+                    get in touch
                 </Button>
+                <Button
+                    sx={{ width: "100%" }}
+                    variant="outlined"
+                    color="secondary"
+                    endIcon={
+                        <ArrowForwardRounded
+                            sx={{ width: "22px", height: "22px" }}
+                        />}
+                >
+
+                    let&apos;s build your project
+                </Button>
+
+
+
                 <Box color="#777777" sx={{ display: "flex", alignItems: "center", gap: 1, height: "100%" }}>
                     <AccessTime />
                     <Typography variant="body2" lineHeight="1" my="1rem" color="#d6d1d1" fontWeight="900" >

@@ -2,35 +2,19 @@
 import { styles } from '@/styles/styles';
 import { Box } from '@mui/material';
 import React, { useEffect } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/all'
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
 import HeroContent from '@/components/hero/HeroContent';
 import initPlanet from '@/components/three/planet3D';
-
-gsap.registerPlugin(ScrollTrigger)
 
 const HeroSection = () => {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    let pin: ScrollTrigger | undefined;
-
     try {
       const { renderer } = initPlanet();
 
-      pin = ScrollTrigger.create({
-        trigger: '#home',
-        start: 'top top',
-        end: 'bottom top',
-        pin: true,
-        pinSpacing: false,
-        pinType: 'transform',
-      });
-
       return () => {
-        pin?.kill();
         if (renderer) {
           const gl = renderer.getContext();
           gl.getExtension("WEBGL_lose_context")?.loseContext();
@@ -39,9 +23,6 @@ const HeroSection = () => {
       };
     } catch (error) {
       console.warn('HeroSection animation setup skipped:', error);
-      return () => {
-        pin?.kill();
-      };
     }
   }, [])
 

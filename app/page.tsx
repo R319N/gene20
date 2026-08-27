@@ -89,9 +89,9 @@ export default function Home() {
           // gap: 4,
         }}
       >
-        {/* <HeroSection />
+        <HeroSection />
         <IntroSection />
-        <ServicesSection />*/}
+        {/* <ServicesSection /> */}
         <Box sx={{ position: "relative", overflow: "hidden" }}>
           {/* Planet arc — top right */}
           <div

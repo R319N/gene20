@@ -78,7 +78,7 @@ const ClientLayout = (props: { children: React.ReactNode }) => {
 
                 {/* <SiteTransition> */}
                   {children}
-                  {/* </SiteTransition> */}
+                {/* </SiteTransition> */}
                 <FooterSection />
             </ThemeProvider>
         </AppRouterCacheProvider>
