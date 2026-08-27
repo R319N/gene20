@@ -4,12 +4,13 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { Paper } from "@mui/material";
+import { Box, Paper } from "@mui/material";
 import ServicesSection from "@/sections/ServicesSection";
 import IntroSection from "@/sections/IntroSection";
 import HeroSection from "@/sections/HeroSection";
 import PortfolioSection from "@/sections/PortfolioSection";
 import ContactSection from "@/sections/ContactSection";
+import TestimonialSection from "@/sections/TestimonialSection";
 
 
 const sections = [
@@ -88,10 +89,31 @@ export default function Home() {
           // gap: 4,
         }}
       >
-        <HeroSection />
+        {/* <HeroSection />
         <IntroSection />
-        <ServicesSection />
-        <PortfolioSection />
+        <ServicesSection />*/}
+        <Box sx={{ position: "relative", overflow: "hidden" }}>
+          {/* Planet arc — top right */}
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              top: "-260px",
+              right: "-260px",
+              width: "680px",
+              height: "680px",
+              borderRadius: "50%",
+              background: "radial-gradient(circle at 38% 58%, #0c1433 60%, #060d22 100%)",
+              border: "1.5px solid rgba(140,175,255,0.75)",
+              boxShadow:
+                "inset 6px 6px 40px rgba(90,130,255,0.25), 0 0 60px rgba(80,120,255,0.18), 0 0 120px rgba(60,90,220,0.12)",
+              zIndex: 0,
+            }}
+          />
+
+          <PortfolioSection />
+          <TestimonialSection />
+        </Box>
+
         <ContactSection />
       </Paper>
     </>

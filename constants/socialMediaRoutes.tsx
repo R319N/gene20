@@ -29,11 +29,11 @@ const socialMediaRoutes = [
     ),
     url: ''
   },
-  {
-    name: 'twitter',
-    icon: <Twitter sx={{ color: theme => theme.palette.socialMediaColors.twitter.main, fontSize: '18px' }} />,
-    url: 'https://twitter.com/wilfred_reign'
-  },
+  // {
+  //   name: 'twitter',
+  //   icon: <Twitter sx={{ color: theme => theme.palette.socialMediaColors.twitter.main, fontSize: '18px' }} />,
+  //   url: 'https://twitter.com/wilfred_reign'
+  // },
   {
     name: 'linkedin',
     icon: <LinkedIn sx={{ color: theme => theme.palette.socialMediaColors.linkedin.main, fontSize: '18px' }} />,

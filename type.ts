@@ -30,3 +30,11 @@ export interface Services {
   deliverables: string[]
   outcomes: string[]
 }
+
+export interface Testimonials {
+  name: string,
+  quote: string,
+  initials: string,
+  role: string,
+  color: string,
+}

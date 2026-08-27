@@ -15,8 +15,6 @@ const PortfolioSection = () => {
             id="portfolio"
             className="portfolio gap-4 relative"
         >
-
-
             <Box
                 sx={{
                     width: { md: "6vw", xxl: "4vw" },

@@ -1,3 +1,4 @@
+import pxToRem from '@/assets/theme/functions/pxToRem'
 import RotatingCard from '@/components/ui/cards/RotatingCard'
 import Phone from '@mui/icons-material/Phone'
 import React from 'react'
@@ -9,7 +10,7 @@ interface Props {
 const PhoneCallButton: React.FC<Props> = ({ phoneNumber }) => {
   return (
     <RotatingCard href={`tel:${phoneNumber}`}>
-      <Phone sx={{ fontSize: '18px', color: '#0044bb' }} />
+      <Phone sx={{ fontSize: pxToRem(32) }} />
     </RotatingCard>
   )
 }

@@ -1,5 +1,5 @@
 const colors = {
-  mode: "dark",
+  mode: "light",
   background: {
     default: "#000414",
     paper: "#000414",

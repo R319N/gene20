@@ -18,7 +18,7 @@ const HeaderText = ({ label }: { label: string }) => {
                 lineHeight: 1.5,
                 fontVariant: "all-small-caps",
                 width: "fit-content",
-                p: "0.3rem 1.5rem",
+                p: "0.5rem 1.5rem",
                 height: "100%",
                 borderRadius: "20px",
                 "&::before": {
