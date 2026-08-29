@@ -86,6 +86,13 @@ const PortfolioSection = () => {
                 <Box width="100%" display="flex" justifyContent="start" alignItems="center">
                     <HeaderText label="Featured Projects" />
                 </Box>
+                <HeaderBanner
+                    text="Selected work, real"
+            spanText="impact"
+            spanColor="primary.main"
+            subtitle="We take pride in our work and the impact it has on our clients. Here are some of our most notable projects that showcase our expertise and dedication to delivering exceptional results.
+                       
+                    />
                 <Box
                     sx={{
                         width: "100%",
