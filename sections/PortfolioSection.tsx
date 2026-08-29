@@ -1,4 +1,5 @@
 import HeaderText from '@/components/headers/HeaderText'
+import HeaderBanner from '@/components/headers/HeaderBanner'
 import PortfolioSlider from '@/components/portfolio/PortfolioSlider'
 import myProjects from '@/constants/my-projects'
 import { styles } from '@/styles/styles'
