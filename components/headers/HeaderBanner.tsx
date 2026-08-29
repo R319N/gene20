@@ -28,7 +28,7 @@ const HeaderBanner = ({ text, spanText, spanColor, subtitle }: Props) => {
                         alignItems: "center",
                         gap: 1,
                         color: spanColor,
-                        fontSize: { xs: "3rem", sm: "4rem", md: "5rem", lg: pxToRem(48) }
+                        fontSize: { xs: "2rem", sm: "4rem", md: "5rem", lg: pxToRem(48) }
                     }}>
 
                     {spanText}
@@ -39,7 +39,7 @@ const HeaderBanner = ({ text, spanText, spanColor, subtitle }: Props) => {
                     <DoubleArrow />
                 </span> */}
                 <Typography variant="body1"
-                    sx={{ maxWidth: "40ch", lineHeight:"120%", textAlign: "center", fontSize: { xs: "1rem", sm: "1.2rem", md: "1.4rem", lg: pxToRem(14) } }}
+                    sx={{ maxWidth: {xs:"100%", lg:"40ch"}, lineHeight:"120%", textAlign: "center", fontSize: { xs: "1rem", sm: "1.2rem", md: "1.4rem", lg: pxToRem(14) } }}
                 >
 
                     {subtitle}
