@@ -13,13 +13,13 @@ interface Props {
 
 const HeaderBanner = ({ text, spanText, spanColor, subtitle }: Props) => {
     return (
-        <Stack gap={0.5} width="100%" sx={{...styles.center_flex, flexDirection: "column"}}>
+        <Stack gap={0.5} width="100%" sx={{...styles.center_flex, flexDirection: "column", px:"2rem"}}>
             <Typography variant="h1"
                 sx={{
-                    width: "12ch",
+                    width: {xs:"100℅", lg:"12ch"},
                     textAlign: "center",
                      lineHeight: 1,
-                    fontSize: { xs: "3rem", sm: "4rem", md: "5rem", lg: pxToRem(48) }
+                    fontSize: { xs: "2rem", sm: "4rem", md: "5rem", lg: pxToRem(48) }
                 }}>
                 {text}&nbsp;
                 <Typography variant="h1" component="span"
