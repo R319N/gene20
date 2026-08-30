@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, Stack, Typography, Button } from '@mui/material';
 import ArrowForwardRounded from '@mui/icons-material/ArrowForwardRounded';
 import { AccessTime } from '@mui/icons-material';
+import pxToRem from '@/assets/theme/functions/pxToRem';
 
 // import { Box } from '@mui/material';
 
@@ -25,7 +26,7 @@ const HeroContent = () => {
                 variant="h1"
                 sx={{
                     fontWeight: "900",
-                    fontSize: { xs: 32, sm: 58, md: 38, xxl: 56 },
+                    fontSize: { xs: pxToRem(32), sm: 58, md: 38, xxl: 56 },
                     lineHeight: "1.2",
                     width: { xs: "12ch", lg: "12ch" },
                     textShadow: '0 12px 34px rgba(91, 139, 255, 0.32)',
@@ -39,31 +40,26 @@ const HeroContent = () => {
             <Typography
                 variant="body1"
                 sx={{
-                    fontSize: { xs: "14px", xl: "18px" },
+                    fontSize: { xs: "14px", xxl: pxToRem(16) },
                     color: 'rgba(238, 243, 255, 0.78)',
                     textTransform: "capitalize",
-                    maxWidth: "45ch"
+                    maxWidth: "45ch",
+                    mixBlendMode:""
 
                 }}
             >
                 We blend <strong>creativity</strong>, <strong>strategy</strong> and <strong>technology</strong> to build next generation digital products that drive growth
                 and deliver <strong style={{ color: "#4a74e9" }}> real strategic impact.</strong>
             </Typography>
-            <Stack spacing={2} sx={{width:"fit-content"}}>
-                <Button
-                    sx={{ width: "100%" }}
-                    variant="outlined"
-                    color="secondary"
-                    endIcon={
-                        <ArrowForwardRounded
-                            sx={{ width: "22px", height: "22px" }}
-                        />}
-                >
-
-                    get in touch
-                </Button>
-                <Button
-                    sx={{ width: "100%" }}
+            <Stack direction={{xs:"column", md:"row"}} spacing={2} sx={{ width: {xs:"max-content", md:"24vw"}  }}>
+                 <Button
+                    sx={{
+                        width: "100%",
+                        justifyContent: "space-between",
+                        '& .MuiButton-endIcon': {
+                            marginLeft: 0,
+                        }
+                    }}
                     variant="outlined"
                     color="secondary"
                     endIcon={
@@ -74,15 +70,34 @@ const HeroContent = () => {
 
                     let&apos;s build your project
                 </Button>
+                <Button
+                    sx={{
+                        width: "100%",
+                        justifyContent: "space-between",
+                        '& .MuiButton-endIcon': {
+                            marginLeft: 0,
+                        }
+                    }}
+                    variant="contained"
+                    color="secondary"
+                    endIcon={
+                        <ArrowForwardRounded
+                            sx={{ width: "22px", height: "22px" }}
+                        />}
+                >
+
+                    get in touch
+                </Button>
+              
 
 
 
-                <Box color="#777777" sx={{ display: "flex", alignItems: "center", gap: 1, height: "100%" }}>
+                {/* <Box color="#777777" sx={{ display: "flex", alignItems: "center", gap: 1, height: "100%" }}>
                     <AccessTime />
                     <Typography variant="body2" lineHeight="1" my="1rem" color="#d6d1d1" fontWeight="900" >
                         We respond within 24 hours
                     </Typography>
-                </Box>
+                </Box> */}
 
             </Stack>
         </Box>

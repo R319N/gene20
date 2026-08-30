@@ -2,21 +2,21 @@ import { Testimonials } from "@/type";
 
 const testimonialReviewData: Testimonials[] = [
   {
-    quote: "The restoration was beyond anything I imagined. It looks brand new.",
+    quote: "Wilfred is an exceptional developer. He understood our vision and delivered a website that exceeded our expectations. Professional, reliable, and highly skilled.",
     name: "Margot Ellis",
     role: "Interior Designer",
     initials: "ME",
     color: "#c9b49a",
   },
   {
-    quote: "Absolutely impeccable craftsmanship. Every detail was treated with care.",
+    quote: "The attention to detail and creativity Wilfred brings to every project is outstanding. Our new platform not only looks amazing but performs perfectly across all devices.",
     name: "James Whitfield",
     role: "Antique Collector",
     initials: "JW",
     color: "#a4b8c4",
   },
   {
-    quote: "I was skeptical at first, but the before-and-after photos blew me away.",
+    quote:"Working with Wilfred was a game changer for our business. He delivered on time, communicated clearly, and built a solution that truly solved our problems.", 
     name: "Sophia Laurent",
     role: "Homeowner",
     initials: "SL",

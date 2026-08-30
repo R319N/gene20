@@ -9,9 +9,10 @@ const { size } = typography;
 const contained = {
   base: {
     color: text.primary,
-    background: `linear-gradient(to bottom left, ${secondary.main} 50%, ${primary.main} 100%)`,
+    background:"transparent",
+    // background: `linear-gradient(to bottom left, ${secondary.main}11 50%, ${primary.main}0.1 100%)`,
     minHeight: pxToRem(40),
-    boxShadow: `0 2px 5px 0 ${primary.main}33, 0 5px 10px 0 ${primary.main}1A`,
+    boxShadow: `0 2px 5px 0 ${primary.main}11, 0 5px 10px 0 ${primary.main}1A`,
     transition: "all 1s ease",
 
     "&:hover": {
@@ -52,7 +53,7 @@ const contained = {
   },
 
   primary: {
-    backgroundColor: secondary.main,
+    backgroundColor: "transparent",
     boxShadow: ` 0 0 10px ${({ theme }) => theme.palette.secondary.main}`,
     "&:hover": {
       backgroundColor: secondary.light,

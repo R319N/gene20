@@ -30,6 +30,7 @@ const root = {
   lineHeight: 1.4,
   textAlign: 'center',
   userSelect: 'none',
+  backgroundColor:"transparent",
   backgroundSize: '150% !important',
   backgroundPositionX: '25% !important',
   transition: 'all 150ms ease-in',

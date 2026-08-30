@@ -6,6 +6,7 @@ import React, { useMemo } from 'react'
 import { Portfolio } from '@/type'
 import ExternalLink from '../ui/buttons/ExternalLink'
 import NavigationButton from '../ui/buttons/NavigationButton'
+import { styles } from '@/styles/styles'
 
 interface Props {
     activeIndex: number;
@@ -39,12 +40,13 @@ const PortfolioSlider = ({ activeIndex, setActiveIndex, activeProject, totalProj
                 position: 'relative',
                 width: '100%',
                 height: "100%",
+                display: "flex",
                 justifyContent: "space-between",
-                pl:{xs:"1rem", md:"4vw", xxl:"4vw"},
+                pl: { xs: "1rem", md: "4vw", xxl: "0vw" },
 
             }}
         >
-            <Grid container sx={{ height: "100%", justifyContent: "space-between" }} >
+            <Grid container sx={{ width: "100%", height: "100%", justifyContent: "space-between" }} >
                 <Grid container size={{ xs: 12, lg: 12 }}>
                     <Grid size={{ xs: 12, lg: 6 }}>
                         <Stack spacing={{ xs: 3, md: 2 }}>
@@ -74,8 +76,8 @@ const PortfolioSlider = ({ activeIndex, setActiveIndex, activeProject, totalProj
                                 <Typography
                                     variant="h1"
                                     sx={{
-                                        textTransform: 'capitalize',
-                                        lineHeight: 1,
+                                        // textTransform: 'capitalize',
+                                        // lineHeight: 1,
                                         // fontSize: { xs: '2.3rem', sm: '3rem', md: '3rem' },
 
                                     }}
@@ -97,12 +99,12 @@ const PortfolioSlider = ({ activeIndex, setActiveIndex, activeProject, totalProj
                             <ExternalLink activeProject={activeProject} />
                         </Stack>
                     </Grid>
-                    <Grid size={{ xs: 12, lg: 6 }} container>
-                        <Grid size={{ xs: 12, lg: 12 }} sx={{ position: "relative", height: "100%" }}>
+                    <Grid size={{ xs: 12, lg: 6 }}>
+                        <Grid size={{ xs: 12, lg: 12 }} sx={{ position: "relative", height: "fit-content" }}>
                             <Box
                                 sx={{
                                     position: 'relative',
-                                    // minHeight: { xs: 260, sm: 380, md: 520 },
+                                    minHeight: { xs: 260, sm: 380, md: "28vh" },
                                     border: '1px solid',
                                     borderColor: 'primary.main',
                                     borderRadius: 3,
@@ -111,7 +113,7 @@ const PortfolioSlider = ({ activeIndex, setActiveIndex, activeProject, totalProj
                                     boxShadow: '0 0 34px rgba(82, 111, 255, 0.26)',
                                     transform: "translate(0%, -30%)",
                                     height: "100%",
-                                    width: "500px",
+                                    width: { xs: "100%", lg: "500px", xxl: "680px" }
                                 }}
                             >
                                 <Image
@@ -139,36 +141,44 @@ const PortfolioSlider = ({ activeIndex, setActiveIndex, activeProject, totalProj
                         </Grid>
                         <Grid size={12}>
                             <Stack
-                                direction="row"
                                 spacing={{ xs: 2, md: 8 }}
-                                sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}
+                                flexDirection="row"
+                                sx=
+                                {{
+                                    width: "100%", display: "flex",
+                                    height: "10vh",
+                                    justifyContent: "center", alignItems: "center",
+                                }}
                             >
-                                <NavigationButton
-                                    onClick={handlePrevious}
-                                    icon={<ArrowBack />}
-                                    ariaLabel="Previous project"
-                                />
+                                {/*  */}
 
-                                <Stack direction="row" alignItems="center" spacing={2}>
+                                <Stack spacing={2} direction="row" sx={{ ...styles.center_flex }}>
+                                    <NavigationButton
+                                        onClick={handlePrevious}
+                                        icon={<ArrowBack />}
+                                        ariaLabel="Previous project"
+                                    />
                                     <Typography sx={{ color: 'primary.main', fontWeight: 700 }}>
                                         {currentNumber}
                                     </Typography>
-                                    <Box sx={{ width: 1, height: 22, bgcolor: 'rgba(255,255,255,0.35)', rotate: '12deg' }} />
+                                    <Box sx={{ width: "16vw", height: 2, bgcolor: 'rgba(255,255,255,0.35)', }} />
                                     <Typography sx={{ color: 'text.secondary', fontWeight: 700 }}>
                                         {totalNumber}
                                     </Typography>
+                                    <NavigationButton
+                                        onClick={handleNext}
+                                        icon={<ArrowForward />}
+                                        ariaLabel="Next project"
+                                    />
                                 </Stack>
-                                <NavigationButton
-                                    onClick={handleNext}
-                                    icon={<ArrowForward />}
-                                    ariaLabel="Next project"
-                                />
+
 
                             </Stack>
                         </Grid>
                     </Grid>
                 </Grid>
             </Grid>
+
         </Box >
     )
 }

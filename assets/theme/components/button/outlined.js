@@ -10,10 +10,11 @@ const { size} = typography
 const outlined = {
   base: {
     color: text.primary,
-    borderColor: rgba(text.primary, 0.2),
+    borderColor: rgba(text.primary, 0.3),
     transition: '1s background all ease',
-    backgroundColor: "#001a421a",
+    backgroundColor: "#001a42",
     backdropFilter: "blur(10px)",
+    textAlign:"left",
 
     '&:hover': {
       borderColor: rgba(text.primary, 0.5),
@@ -46,7 +47,6 @@ const outlined = {
   },
 
   primary: {
-
     '&:hover': {
       backgroundColor: "#001a4296",
       borderColor: rgba(text.primary, 0.1)

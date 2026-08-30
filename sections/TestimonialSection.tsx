@@ -1,8 +1,9 @@
 import { TestimonialCard } from '@/components/cards/TestimonialCard'
 import HeaderText from '@/components/headers/HeaderText';
+import HeaderBanner from '@/components/headers/HeaderBanner';
 import testimonialReviewData from '@/constants/testimonial_reviewData';
 import { styles } from '@/styles/styles';
-import { Box, Container } from '@mui/material';
+import { Box, Container , Stack} from '@mui/material';
 import gsap from 'gsap';
 import React, { useEffect, useRef } from 'react'
 
@@ -71,7 +72,7 @@ const TestimonialSection = ({ reversed = false }: { reversed?: boolean }) => {
                     zIndex: 0,
                 }}
             />
-           
+
 
             {/* Ambient blue glow — top right behind planet */}
             <div
@@ -101,7 +102,16 @@ const TestimonialSection = ({ reversed = false }: { reversed?: boolean }) => {
             </Box> */}
 
             <Box sx={{ width: "100%", height: "100%", gap: 8, ...styles.column_flex, alignItems: "start" }}>
-                <HeaderText label='what our clients say' />
+                <Stack spacing={4} width="100%">
+                    <HeaderText label='what our clients say' />
+                    <HeaderBanner
+                        text="Trusted by clients, driven by"
+                        spanText="results"
+                        spanColor="primary.main"
+                        subtitle="We take pride in our work and the impact it has on our clients. Here are some of our most notable projects that showcase our expertise and dedication to delivering exceptional results."
+
+                    />
+                </Stack>
                 <div ref={trackRef} className="flex w-max py-2 gap-8">
                     {items.map((t, i) => (
                         <TestimonialCard key={i} {...t} />
