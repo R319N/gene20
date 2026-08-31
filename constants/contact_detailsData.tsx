@@ -19,7 +19,7 @@ const contactDetailsdata: Contact[] = [
   {
     name: "email",
     details: "wilfredr319n@gmail.com",
-    icon: <Email />,
+    icon: <Email sx={{width:"20px", height:"20px"}} />,
     color: "red",
     component: <EmailButton emailAddress="wilfredr319n@gmail.com" />,
   },

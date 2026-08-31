@@ -1,6 +1,5 @@
 import pxToRem from '@/assets/theme/functions/pxToRem';
-import { styles } from '@/styles/styles';
-import { ArrowRight, DoubleArrow } from '@mui/icons-material';
+import { DoubleArrow } from '@mui/icons-material';
 import { Typography, Stack, Box } from '@mui/material'
 import React from 'react'
 
@@ -13,13 +12,13 @@ interface Props {
 
 const HeaderBanner = ({ text, spanText, spanColor, subtitle }: Props) => {
     return (
-        <Stack gap={2} width="100%">
-            <Typography variant="h1"
+        <Stack gap={2} width="100%" >
+            <Typography variant="h1" textTransform={"capitalize"}
                 sx={{
-                    width: {xs:"80vw", lg:"14ch"},
+                    width: {xs:"80vw", lg:"16ch", xxl:"14ch"},
                     lineHeight:1.125,
                     textAlign: "left",
-                    fontSize: { xs: pxToRem(32), sm: "4rem", md: "5rem", lg: pxToRem(48), xxl:pxToRem(64) }
+                    fontSize: { xs: pxToRem(32), sm: "4rem", md: "5rem", lg: pxToRem(40), xxl:pxToRem(64) }
                 }}>
                 {text}&nbsp;
                 <Typography variant="h1" component="span"
@@ -29,7 +28,7 @@ const HeaderBanner = ({ text, spanText, spanColor, subtitle }: Props) => {
                         gap: 1,
                         color: spanColor,
                         lineHeight:1,
-                        fontSize: { xs: pxToRem(32), sm: "4rem", md: "5rem", lg: pxToRem(48), xxl:pxToRem(64) }
+                        fontSize: { xs: pxToRem(32), sm: "4rem", md: "5rem", lg: pxToRem(40), xxl:pxToRem(64) }
                     }}>
 
                     {spanText}
@@ -39,8 +38,10 @@ const HeaderBanner = ({ text, spanText, spanColor, subtitle }: Props) => {
                 <Box sx={{display:{xs:"none", md:"flex"}}}>
                     <DoubleArrow />
                 </Box>
-                <Typography variant="body1"
-                    sx={{ maxWidth: {xs:"100%", lg:"40ch", xxl:"60ch"}, lineHeight:"130%", textAlign: "left", fontSize: { xs: pxToRem(12), sm: "1.2rem", md: "1.4rem", lg: pxToRem(14), xxl:pxToRem(14) } }}
+                <Typography 
+                variant="body1"
+                
+                    sx={{ maxWidth: {xs:"100%", lg:"60ch", xxl:"60ch"}, lineHeight:"130%", textAlign: "left", fontSize: { xs: pxToRem(12), sm: "1.2rem", md: "1.4rem", lg: pxToRem(12), xxl:pxToRem(14) } }}
                 >
 
                     {subtitle}

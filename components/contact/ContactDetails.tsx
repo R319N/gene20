@@ -12,7 +12,8 @@ const ContactDetails = forwardRef<HTMLDivElement>((_, ref) => {
                 <Stack key={i} gap={1} className='flex justify-start'>
                     <div className="flex items-center gap-5">
                         <Box sx={{
-                            // ...styles.iconXS
+                            ...styles.iconXS,
+                            p:"1rem"
                         }}>
                             {item.component}
                         </Box>
@@ -22,7 +23,7 @@ const ContactDetails = forwardRef<HTMLDivElement>((_, ref) => {
                                 {item.name}
                             </Typography> */}
                         < Typography variant='body1' color="textSecondary"
-                            sx={{ fontWeight: "light", lineHeight: "100%", letterSpacing: "0.5px", fontSize: { xs: "0.9rem", sm: pxToRem(14) } }}
+                            sx={{ fontWeight: "bold", lineHeight: "100%", letterSpacing: "0.5px", fontSize: { xs: "0.9rem", lg: pxToRem(18) } }}
                         >
                             {item.details}
                         </Typography>

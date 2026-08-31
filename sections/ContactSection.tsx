@@ -1,243 +1,339 @@
-// "use client";
-
-// // import LivingAbstractSphere from "@/components/three/LivingAbstractSphere";
-// import { styles } from "@/styles/styles";
-// import { Box, Divider, Stack, Typography, Link, Container } from "@mui/material";
-// import LinkButton from "@/components/ui/buttons/LinkButton";
-// import socialMediaRoutes from "@/constants/socialMediaRoutes";
-
-// export default function ContactSection() {
-//   return (
-//     <section id="contact" style={{background:"transparent"}}>
-//       <Container
-
-//         sx={{
-//           position: "relative",
-//           width: "100%",
-//           minHeight: "100dvh",
-//           overflow: "visible",
-//           zIndex: 0,
-//           display: "flex",
-//           alignItems: "center",
-//           justifyContent: "center",
-//         }}
-//       >
-//         {/* <Box
-//         sx={{
-//           position: "absolute",
-//           width: "100%",
-//           height: "100%",
-//           display: "flex",
-//           alignItems: "center",
-//           justifyContent: "center",
-//           pointerEvents: "none",
-//           zIndex: 0,
-//           left: "-40%",
-//           top: 0,
-//           transform: "translateY(30%)",
-//           overflow:"hidden"
-
-//         }}>
-//         <LivingAbstractSphere />
-//       </Box>
-//       <Box
-//         sx={{
-//           position: "absolute",
-//           width: "100%",
-//           height: "100%",
-//           display: "flex",
-//           alignItems: "center",
-//           justifyContent: "center",
-//           pointerEvents: "none",
-//           zIndex: 0,
-//           right: "-45%",
-//           top: 0,
-//           transform: "translateY(-20%)",
-//            overflow:"hidden"
-
-//         }}>
-//         <LivingAbstractSphere />
-//       </Box> */}
-//         <Box className="body-gradient1" />
-//         <Box
-//           sx={{
-//             ...styles.glassOutlinedTheme,
-//             width: "700px",
-//             height: "100%",
-//             p: "1rem",
-//             // ...styles.column_flex,
-//             gap: 2,
-//           }}>
-
-//           <Stack sx={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", py: "1rem" }}>
-//             <Typography variant="h1"
-//               sx={{
-//                 width: { xs: "100%", xxl: "15ch" },
-//                  textAlign: "center", fontWeight: 900, fontSize: {xs:"32px", lg:"3rem"},
-//                 background: "linear-gradient(90deg, #bbd4da, #3a47d5)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"
-//               }}>
-//               Ready to build the future
-//             </Typography>
-//             <Typography variant="body1" sx={{ mt: 2, mb: 4, width: "100%", textAlign: "center", fontSize: "14px", color: "rgba(255, 255, 255, 0.8)", }}>
-//               Let&apos; s connect and create something amazing together. Whether you have a project in mind or just want to say hi, I&apos;m always open to new opportunities and collaborations.
-//             </Typography>
-//             <Stack direction="row" spacing={2}>
-
-//               {/* <Button variant="contained" color="primary" startIcon={<QuestionMark />}>
-//               Ask Any Questions
-//             </Button> */}
-//               <LinkButton pageUrl="/contact" label="get in touch with us" />
-//             </Stack>
-//           </Stack>
-//           <Divider />
-//           <Stack direction="row" sx={{ justifyContent: "space-between", py: "1rem", px:"2rem" }}>
-//             {socialMediaRoutes.map((social, i) => (
-//               <Link href={social.url} key={i} sx={{ color: "textPrimary", textTransform: "capitalize" }}>
-//                 {social.icon}
-//               </Link>
-//             ))}
-//           </Stack>
-//         </Box>
-//       </Container>
-//     </section>
-//   );
-// }
-import pxToRem from '@/assets/theme/functions/pxToRem'
-import ContactDetails from '@/components/contact/ContactDetails'
-import SocialContacts from '@/components/contact/socialContact'
-import HeaderBanner from '@/components/headers/HeaderBanner'
-import HeaderText from '@/components/headers/HeaderText'
+import DottedWorldMap from '@/components/contact/DottedWorldMap'
+import { Box, Container, Stack, Typography, Link } from '@mui/material'
+import React from 'react'
+import { Mail, Phone, LocationPin, RocketLaunch } from '@mui/icons-material'
 import socialMediaRoutes from '@/constants/socialMediaRoutes'
 import { styles } from '@/styles/styles'
-import { BookOnline, SubdirectoryArrowRight } from '@mui/icons-material'
-import { Box, Button, Container, Stack, Typography } from '@mui/material'
-import Link from 'next/link'
-// import Head from 'next/head'
-import React from 'react'
+import HeaderText from '@/components/headers/HeaderText'
+import HeaderBanner from '@/components/headers/HeaderBanner'
+import SocialContacts from '@/components/contact/socialContact'
+import pxToRem from '@/assets/theme/functions/pxToRem'
+import ContactDetails from '@/components/contact/ContactDetails'
+import '@/styles/animatedButton.css'
+import GlowButton from '@/components/ui/buttons/GlowButton'
 
 const ContactSection = () => {
   return (
-    <section id="contact" className='h-[100%]'>
-      <Container
+    <section id="contact" style={{ background: "transparent", position: "relative", }}>
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 0,
+          pointerEvents: "none",
+          opacity: "10%",
+          transform: "translate(0%, 20%)"
+        }}
+      >
+        <DottedWorldMap
+          dotSpacing={11}
+          dotRadius={1.4}
+          highlightColor="#8B5CF6"
+          opacity={0.22}
+        />
+      </Box>
+
+      <Box
         sx={{
           ...styles.section_container,
-          // ...styles.between_flex,
-          flexDirection: "column",
-          pb: "10vh",
-          gap: 6,
-          alignItems: "flex-start",
-        }}>
-        <div className="w-full">
-          <HeaderText label="get in touch" />
-        </div>
-        <ContactDetails />
-        <Box sx={{ ...styles.column_flex, width: "100%", gap: 8 }}>
-          <HeaderBanner
-            text="Ready to build"
-            spanText="the future"
-            spanColor="primary.main"
-            subtitle="Join forces with a digital partner that understands the intersection of high-end design and mission-critical engineering."
-          />
-          <Stack
-            direction={"row"}
-            spacing={4}
+          gap: 4,
+          maxHeight: "100dvh",
+          height: "100%",
+          boxSizing: "border-box",
+          px: { xs: "1rem", md: "8vw", xxl: "10vw" },
+          pb: "10vh"
+        }}
+      >
+        {/* Left Content */}
+        <Box
+          sx={{
+            flex: 1,
+            width: "100%",
+            gap: 4,
+            ...styles.between_flex, flexDirection: "column"
+          }}
+        >
+          <Stack spacing={4}>
+            <HeaderText label='get in touch' />
+            <HeaderBanner
+              text="Let&apos;s create something"
+              spanText='extraordinary'
+              spanColor="rgb(32, 161, 253)"
+              subtitle=" I'm currently available for new projects and collaborations. Whether you have a question or just want to say hello, I'd love to hear from you."
+
+            />
+          </Stack>
+          <Box sx={{ ...styles.between_flex, alignItems: "flex-end", height: "100%" }}>
+            <Stack>
+              <ContactDetails /><SocialContacts />
+            </Stack>
+            {/* <Box
+            // className="animated-button"
+              sx={{
+                // ...styles.between_flex,
+                // alignItems: "center", width: "fit-content",
+                border: "1px solid white",
+                // padding: "0.8rem 1.5rem",
+                // borderRadius: "10px",
+                gap: 4
+              }}>
+              <Box sx={{ borderRadius: "50%", border: "1px solid white", p: "0.5rem" }}>
+                <RocketLaunch />
+              </Box>
+
+              <Stack spacing={1} sx={{ textTransform: "capitalize" }}>
+                <Typography
+                  variant='h6'
+                  sx={{ letterSpacing: "1.5px", fontVariant: "all-small-caps", fontWeight: "bold" }}>
+                  Start a Project
+                </Typography>
+                <Typography variant='body2' lineHeight={"140%"} fontWeight="regular" width={"25ch"}  color= "rgba(255, 255, 255, 0.6)">
+                  tell us about your project and lets bring your ideas to life
+                </Typography>
+              </Stack>
+            </Box> */}
+            <GlowButton
+              title="START A PROJECT"
+              subtitle="Tell me about your project and let's bring your ideas to life."
+              onClick={() => {
+                // navigation / modal / contact action
+              }}
+            />
+
+
+          </Box>
+          {/* Contact Details */}
+          {/* <Stack gap={3}>
+            
+            <Stack direction="row" gap={2} alignItems="flex-start">
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "40px",
+                  height: "40px",
+                  borderRadius: "50%",
+                  border: "1px solid rgba(99, 102, 241, 0.3)",
+                  color: "#6366f1",
+                  flexShrink: 0,
+                }}
+              >
+                <Mail />
+              </Box>
+              <Stack>
+                <Typography
+                  sx={{
+                    fontSize: "11px",
+                    letterSpacing: "1px",
+                    textTransform: "uppercase",
+                    color: "rgba(255, 255, 255, 0.5)",
+                    fontWeight: 600,
+                  }}
+                >
+                  Email
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "14px",
+                    color: "rgba(255, 255, 255, 0.9)",
+                    mt: 0.5,
+                  }}
+                >
+                  hello@wilfredreignn.dev
+                </Typography>
+              </Stack>
+            </Stack>
+
+          
+            <Stack direction="row" gap={2} alignItems="flex-start">
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "40px",
+                  height: "40px",
+                  borderRadius: "50%",
+                  border: "1px solid rgba(99, 102, 241, 0.3)",
+                  color: "#6366f1",
+                  flexShrink: 0,
+                }}
+              >
+                <Phone />
+              </Box>
+              <Stack>
+                <Typography
+                  sx={{
+                    fontSize: "11px",
+                    letterSpacing: "1px",
+                    textTransform: "uppercase",
+                    color: "rgba(255, 255, 255, 0.5)",
+                    fontWeight: 600,
+                  }}
+                >
+                  Phone
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "14px",
+                    color: "rgba(255, 255, 255, 0.9)",
+                    mt: 0.5,
+                  }}
+                >
+                  +27 73 052 3779
+                </Typography>
+              </Stack>
+            </Stack>
+
+           
+            <Stack direction="row" gap={2} alignItems="flex-start">
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "40px",
+                  height: "40px",
+                  borderRadius: "50%",
+                  border: "1px solid rgba(99, 102, 241, 0.3)",
+                  color: "#6366f1",
+                  flexShrink: 0,
+                }}
+              >
+                <LocationPin />
+              </Box>
+              <Stack>
+                <Typography
+                  sx={{
+                    fontSize: "11px",
+                    letterSpacing: "1px",
+                    textTransform: "uppercase",
+                    color: "rgba(255, 255, 255, 0.5)",
+                    fontWeight: 600,
+                  }}
+                >
+                  Location
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "14px",
+                    color: "rgba(255, 255, 255, 0.9)",
+                    mt: 0.5,
+                  }}
+                >
+                  South Africa
+                </Typography>
+              </Stack>
+            </Stack> 
+          </Stack>*/}
+
+          {/* Social Links */}
+          {/* <Box>
+            <Typography
+              sx={{
+                fontSize: "11px",
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+                color: "rgba(255, 255, 255, 0.5)",
+                fontWeight: 600,
+                mb: 2,
+              }}
+            >
+              Let&apos;s Connect
+            </Typography>
+            <Stack direction="row" gap={3}>
+              {socialMediaRoutes.map((social, index) => (
+                <Link
+                  href={social.url}
+                  key={index}
+                  sx={{
+                    fontSize: "12px",
+                    letterSpacing: "0.5px",
+                    textTransform: "uppercase",
+                    color: "rgba(255, 255, 255, 0.7)",
+                    textDecoration: "none",
+                    fontWeight: 500,
+                    transition: "color 0.3s ease",
+                    "&:hover": {
+                      color: "#6366f1",
+                    },
+                  }}
+                >
+                  {social.name}
+                </Link>
+              ))}
+            </Stack>
+          </Box>
+        </Box> */}
+
+          {/* Right Content - Project Card */}
+          {/* <Box
             sx={{
-              width: "100%",
-              ...styles.center_flex
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-end",
+              justifyContent: "flex-end",
+              pr: 4,
             }}
           >
-            <Button
-              variant="outlined"
-              color="primary"
-              startIcon={<BookOnline />}
-              sx={{ mt: 2, width: { xs: "100%", lg: "fit-content" } }}
+            <Box
+              sx={{
+                border: "1px solid rgba(99, 102, 241, 0.2)",
+                borderRadius: "16px",
+                p: 4,
+                backgroundColor: "rgba(10, 10, 20, 0.4)",
+                backdropFilter: "blur(10px)",
+                maxWidth: "350px",
+                textAlign: "center",
+              }}
             >
-              book a consultation
-            </Button>
-            <Button
-              variant='contained'
-              startIcon={<SubdirectoryArrowRight />}
-            >
-              send us an email
-            </Button>
-          </Stack>
-          {/* <SocialContacts /> */}
-          <Box sx={{...styles.center_flex, width:"100%", gap:8, textTransform:"uppercase",}}>
-            {socialMediaRoutes.map((social, index) => (
-              <Box component="a" href={social.url} key={index} >
-                <Typography variant="body2" fontWeight={"600"}>
-                  {social.name}
-                </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "60px",
+                  height: "60px",
+                  borderRadius: "50%",
+                  border: "2px solid rgba(99, 102, 241, 0.5)",
+                  mx: "auto",
+                  mb: 3,
+                }}
+              >
+                <Typography sx={{ fontSize: "28px" }}>→</Typography>
               </Box>
-            ))}
-          </Box>
+              <Typography
+                variant="h3"
+                sx={{
+                  fontSize: "18px",
+                  fontWeight: 700,
+                  mb: 2,
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                }}
+              >
+                Start a Project
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "rgba(255, 255, 255, 0.6)",
+                  fontSize: "14px",
+                  lineHeight: 1.5,
+                }}
+              >
+                Tell me about your project and let's bring your ideas to life.
+              </Typography>
+            </Box>
+          </Box>*/}
         </Box>
-
-
-
-
-        {/* <Typography variant="h2"
-         sx={{ fontWeight: 900, fontSize: { xs: "1.5rem", lg: pxToRem(48) }, textAlign: { xs: "center", lg: "left" } }}>
-          info@gene20.co.za
-        </Typography> */}
-
-
-        {/* <Grid container spacing={4} sx={{ width: "100%", }}>
-          <Grid size={{ xs: 12, lg: 12 }} sx={{}}>
-            <Stack spacing={2} sx={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: { xs: "center", lg: "flex-start" }, justifyContent: "center", py: "1rem" }}>
-              <Stack>
-                <Box sx={{ display: "flex", flexDirection: { xs: "column", lg: "row" }, gap: 2, alignItems: { xs: "center", lg: "flex-start" } }}>
-                  
-                  <Typography variant="h2" sx={{ fontWeight: 900, fontSize: { xs: "1.5rem", lg: pxToRem(32) }, textAlign: { xs: "center", lg: "left" } }}>
-                      info@gene20.co.za
-                    </Typography>
-                </Box>
-              </Stack>
-              <Stack>
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  startIcon={<BookOnline />}
-                  sx={{ mt: 2, width: { xs: "100%", lg: "fit-content" } }}>
-                  book a consultation
-                </Button>
-                <Box display="flex" alignItems="center" gap={1} sx={{ mt: 2, width: { xs: "100%", lg: "fit-content" } }}>
-                  <Box
-                    sx={{
-                      ...styles.center_flex,
-                      width: "40px", height: "40px",
-                      borderRadius: "20%",
-                      background: "linear-gradient(135deg, #29adff 0%, #8f7cff 100%)", boxShadow: "0 0 14px rgba(41,173,255,0.6)"
-                    }} >
-                    <SubdirectoryArrowRight />
-                  </Box>
-                  <Typography variant="body1" sx={{ fontWeight: 900, textAlign: { xs: "center", lg: "left" }, width: { xs: "100%", lg: "40ch" }, textTransform: "capitalize" }}>
-                    send us an email
-                  </Typography>
-                </Box>
-              </Stack>
-
-            </Stack>
-          </Grid>
-          <Grid size={{ xs: 12, lg: 12 }} sx={{}}>
-            contact form
-          </Grid>
-        </Grid> */}
-        {/* <Box
-          sx={{
-            ...styles.glassOutlinedTheme,
-            width: "700px",
-            height: "100%",
-            p: "1rem",
-            // ...styles.column_flex,
-            gap: 2,
-          }}>
-          hie
-        </Box> */}
-      </Container>
+      </Box>
     </section>
   )
 }
-
 
 export default ContactSection
