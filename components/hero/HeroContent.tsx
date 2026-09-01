@@ -51,7 +51,7 @@ const HeroContent = () => {
                 We blend <strong>creativity</strong>, <strong>strategy</strong> and <strong>technology</strong> to build next generation digital products that drive growth
                 and deliver <strong style={{ color: "#4a74e9" }}> real strategic impact.</strong>
             </Typography>
-            <Stack direction={{xs:"column", md:"row"}} spacing={2} sx={{ width: {xs:"max-content", md:"24vw"}  }}>
+            <Stack direction={{xs:"column", md:"row"}} spacing={2} sx={{ width: {xs:"max-content", lg:"35vw", xxl:"24vw"}  }}>
                  <Button
                     sx={{
                         width: "100%",

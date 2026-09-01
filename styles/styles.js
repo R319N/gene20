@@ -40,12 +40,16 @@ export const styles = {
     // width: "32px",
     border: "1px solid #7E78D255",
   },
+  icons: {
+    fontSize: { xs: pxToRem(16), lg: pxToRem(22), xxl: pxToRem(32) }
+  },
   iconXS: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    height: { xs: "34px", lg: "40px" },
-    width: { xs: "34px", lg: "40px" },
+    p:"0.2rem",
+    // height: { xs: "34px", lg: "24px", xxl: "40px" },
+    // width: { xs: "34px", lg: "24px", xxl: "40px" },
     backdropFilter: "blur(20px)",
     border: (theme) => `1px solid ${rgba(theme.palette.text.primary, 0.1)}`,
     borderRadius: "8px",
@@ -82,7 +86,7 @@ export const styles = {
     position: "relative",
     minHeight: "100dvh",
     width: "100%",
-    pt: {xs: "14dvh", xxl: "18vh"},
+    pt: { xs: "14dvh", lg: "18vh", xxl: "18vh" },
     display: "flex",
     alignItems: "center",
     flexDirection: "column",

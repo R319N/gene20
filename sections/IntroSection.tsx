@@ -23,6 +23,7 @@ const IntroSection = () => {
         width: "100%",
         position: 'relative',
         minHeight: "100dvh",
+        height:"100%",
         color: '#dbe7ff',
         px: { xs: 1.4, sm: 4, md: 7 },
         ...styles.center_flex,

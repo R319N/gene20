@@ -7,6 +7,7 @@ import { Portfolio } from '@/type'
 import ExternalLink from '../ui/buttons/ExternalLink'
 import NavigationButton from '../ui/buttons/NavigationButton'
 import { styles } from '@/styles/styles'
+import pxToRem from '@/assets/theme/functions/pxToRem'
 
 interface Props {
     activeIndex: number;
@@ -76,7 +77,7 @@ const PortfolioSlider = ({ activeIndex, setActiveIndex, activeProject, totalProj
                                 <Typography
                                     variant="h1"
                                     sx={{
-                                        // textTransform: 'capitalize',
+                                        textTransform: 'capitalize',
                                         // lineHeight: 1,
                                         // fontSize: { xs: '2.3rem', sm: '3rem', md: '3rem' },
 
@@ -85,11 +86,12 @@ const PortfolioSlider = ({ activeIndex, setActiveIndex, activeProject, totalProj
                                     {activeProject.title}
                                 </Typography>
                                 <Typography
-                                    variant="body1"
+                                    variant="body2"
                                     sx={{
                                         color: 'text.secondary',
                                         width: "60ch",
                                         lineHeight: 1.55,
+                                        fontSize:{xs:pxToRem(12), lg:pxToRem(12)}
 
                                     }}
                                 >
@@ -99,20 +101,22 @@ const PortfolioSlider = ({ activeIndex, setActiveIndex, activeProject, totalProj
                             <ExternalLink activeProject={activeProject} />
                         </Stack>
                     </Grid>
-                    <Grid size={{ xs: 12, lg: 6 }}>
+                    <Grid size={{ xs: 12, lg: 6 }} sx={{ height: "100%", display: "flex", alignItems: "flex-end" }}>
                         <Grid size={{ xs: 12, lg: 12 }} sx={{ position: "relative", height: "fit-content" }}>
                             <Box
                                 sx={{
-                                    position: 'relative',
-                                    minHeight: { xs: 260, sm: 380, md: "28vh" },
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                    minHeight: { xs: 260, lg: "34vh", xxl: "28vh" },
                                     border: '1px solid',
                                     borderColor: 'primary.main',
                                     borderRadius: 3,
                                     overflow: 'hidden',
                                     bgcolor: 'rgba(3, 7, 18, 0.62)',
                                     boxShadow: '0 0 34px rgba(82, 111, 255, 0.26)',
-                                    transform: "translate(0%, -30%)",
-                                    height: "100%",
+                                    transform: "translate(0%, -130%)",
+                                    height: { xs: "100%", lg: "100%", xxl: "100%" },
                                     width: { xs: "100%", lg: "500px", xxl: "680px" }
                                 }}
                             >

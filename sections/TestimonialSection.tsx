@@ -54,11 +54,12 @@ const TestimonialSection = ({ reversed = false }: { reversed?: boolean }) => {
             sx={{
                 ...styles.section_container,
                 gap: 4,
-                maxHeight: "100dvh",
+                minHeight: "100dvh",
                 height: "100%",
                 boxSizing: "border-box",
                 px: { xs: "1rem", md: "8vw", xxl: "10vw" },
-                position: "relative"
+                position: "relative",
+
             }}
         >
             <div

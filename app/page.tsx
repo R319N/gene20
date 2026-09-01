@@ -91,8 +91,8 @@ export default function Home() {
       >
         <HeroSection />
         <IntroSection />
-        {/* <ServicesSection /> */}
-        <Box sx={{ position: "relative", overflow: "hidden" }}>
+        <ServicesSection />
+        <Box sx={{ position: "relative", }}>
           {/* Planet arc — top right */}
           <div
             className="absolute pointer-events-none"
